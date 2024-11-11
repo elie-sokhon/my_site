@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/about-us.css" %}/>
+{% endblock css_files %}
+{% block content %}
+
+<body>
+    <div class="about-container">
+        <section class="intro-section">
+            <h1>About Us</h1>
+            <p>Established 20 years ago, we are proud to be one of Lebanon's top companies in the parking gate industry. 
+                Over the years, we have become synonymous with quality and reliability, 
+                constantly evolving to meet the needs of our clients and pushing boundaries in parking technology.</p>
+        </section>
+
+        <section class="mission-vision">
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide efficient and innovative parking gate solutions that enhance security and convenience for our clients, 
+                    helping them streamline operations and improve the parking experience.</p>
+                <img src="{% static "MainPage/images/mission.jpg"%} " alt="Our Mission" class="section-image">
+            </div>
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>We aim to be pioneers in parking infrastructure solutions in Lebanon and beyond, known for cutting-edge technology, sustainability, and exceptional service.</p>
+                <img src="{% static "MainPage/images/vision.jpg" %}" alt="Our Vision" class="section-image">
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h2>Our Core Values</h2>
+            <ul class="values-list">
+                <li><strong>Quality:</strong> We are committed to providing top-quality products and services.</li>
+                <li><strong>Innovation:</strong> We embrace new ideas and technologies to stay ahead in the industry.</li>
+                <li><strong>Customer-Centric:</strong> Our clients' needs are at the heart of everything we do.</li>
+                <li><strong>Integrity:</strong> We believe in transparency, honesty, and ethical practices.</li>
+            </ul>
+            <img src="{% static "MainPage/images/values.jpeg" %} " alt="Our Values" class="section-image">
+        </section>
+    </div>
+</body>
+
+
+{% endblock content %}

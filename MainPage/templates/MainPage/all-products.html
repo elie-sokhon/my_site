@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}All Products{% endblock title %}
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/all-products.css" %}/>
+{% endblock css_files %}
+{% block content %}
+<body>
+    {% for product in products %}
+    <a href ="{% url "product-detail" product.slug %}">
+    <section class="product-section" id="sectional-doors">
+        <div class="container">
+            <h2>{{product.title}}</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="{% static "MainPage/images/"|add:product.image_name %}"  alt="{{product.title}}">
+                    <h2>{{product.title}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sokhon Security S.A.R.L All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+{% endblock content %}

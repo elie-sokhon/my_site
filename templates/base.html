@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "app.css" %}">
+    {% block css_files %}{% endblock css_files %}
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="company-name">
+                <h1>Sokhon Security</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="{% url 'starting-page' %}">Home</a></li>
+                    <li><a href="{% url 'all-products' %}">All Products</a></li>
+                    <li><a href="{% url "about-us" %}">About Us</a></li>
+                    <li><a href="{% url "register" %}">Register</a></li>
+                    <li><a href="{% url "login" %}">Log In</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <a href="tel:+18001234567" class="phone"><i class="fas fa-phone-alt"></i> 03615205</a>
+                <a href="mailto:info@sokhonsecurity.com" class="email"><i class="fas fa-envelope"></i> sokhonsec@gmail.com</a>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+{% block content %}{% endblock content %}
+</body>
+</html>

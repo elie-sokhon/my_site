@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 100px 100px;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-section, .mission-vision, .values-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.intro-image, .section-image {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mission, .vision {
+    text-align: left;
+}
+
+.mission h2, .vision h2 {
+    color: #007BFF;
+    font-size: 22px;
+}
+
+.values-section {
+    text-align: left;
+}
+
+.values-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.values-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.values-list li strong {
+    color: #007BFF;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}

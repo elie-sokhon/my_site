@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Product Specifications{% endblock title %}
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/products_specs.css" %}/>
+{% endblock css_files %}
+{% block content %}
+<body>
+    <h1>{{product.content}}
+    <a href="{% url "product-detail" product.slug %}"/>
+    <main class="product-main">
+        <div class="container product-container">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/600x400" alt="Product Image">
+            </div>
+
+            <div class="product-details">
+                <h2>Description</h2>
+                <p>
+                    This is a detailed description of the product. Here, you can explain its features, functionality, and benefits. 
+                    The product is designed with high-quality materials and offers exceptional durability and performance.
+                </p>
+
+                <h2>Specifications</h2>
+                <table class="specs-table">
+                    <tr>
+                        <td><strong>Dimension</strong></td>
+                        <td>2000mm x 2500mm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Material</strong></td>
+                        <td>Steel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weight</strong></td>
+                        <td>150kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Power</strong></td>
+                        <td>230V AC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Color</strong></td>
+                        <td>Black</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sokhon Security S.A.R.L All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+{% endblock content %}
+
+
+

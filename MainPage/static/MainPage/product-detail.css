@@ -1,0 +1,167 @@
+.product-container {
+    max-width: 600px;
+    margin: 180px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-container a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.product-container a:hover {
+    background-color: #0056b3;
+}
+
+/* Comment section styling */
+.comment-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-form h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-control label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .form-control input[type="text"],
+  .form-control textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+  }
+  
+  .form-control input[type="text"]:focus,
+  .form-control textarea:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional Styling for Mobile */
+  @media (max-width: 600px) {
+    .comment-section {
+      padding: 15px;
+    }
+  
+    .submit-btn {
+      width: 100%;
+    }
+  }
+
+  /* Comments Section Styling */
+.comments-section {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comments-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .comment {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .comment-author {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .comment-date {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .comment-text {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .no-comments {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+  }
+  

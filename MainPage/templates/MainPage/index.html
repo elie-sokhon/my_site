@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Main Page
+{% endblock title %}
+
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/index.css" %}/>
+{% endblock css_files %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" style="background-image: url('{% static 'MainPage/images/11.jpg' %}');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Leading the Future of Parking Automation</h1>
+        <p>Efficient, secure, and scalable parking solutions for every need.</p>
+        <a href="#contact" class="cta-button">Contact Us</a>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="features">
+    <h2>Our Parking Solutions</h2>
+    <div class="product-cards">
+        <div class="card">
+            <img src="{% static 'MainPage/images/sliding-gate.jpg' %}" alt="Sliding Gates">
+            <h3>Sliding Gates</h3>
+            <p>Our automated sliding gates offer secure and efficient entry/exit solutions for parking lots and facilities.</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'MainPage/images/sectional-gate.jpg' %}" alt="Sectional Doors">
+            <h3>Sectional Doors</h3>
+            <p>Robust and space-efficient sectional doors designed to handle high-traffic parking areas.</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'MainPage/images/access-control.jpg' %}" alt="Access Control">
+            <h3>Access Control Systems</h3>
+            <p>Integrate parking management with automated access control to streamline security and operations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us">
+    <h2>Why Choose Sokhon Security?</h2>
+    <div class="benefits">
+        <div class="benefit">
+            <h3>Advanced Technology</h3>
+            <p>We use the latest automation technology to create reliable, scalable parking systems.</p>
+        </div>
+        <div class="benefit">
+            <h3>Security First</h3>
+            <p>Our systems are designed with top-level security to ensure the safety of your premises.</p>
+        </div>
+        <div class="benefit">
+            <h3>Customized Solutions</h3>
+            <p>Tailored solutions to meet the specific needs of your parking facility or business.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="about-us">
+    <h2>About Us</h2>
+    <p>Founded 20 years ago, our company has grown to become one of Lebanon's leading providers in the parking gate industry. 
+        With a commitment to quality, innovation, and reliability, we have built a reputation for delivering top-notch solutions tailored to meet the needs of diverse clients across the country. 
+        Our extensive experience and dedication to excellence drive us to continually set new standards in parking gate technology and customer service. 
+        We take pride in contributing to efficient, secure, and convenient parking systems, enhancing the overall infrastructure and experience for our clients and communities.</p>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="contact-us">
+    <h2>Contact Us</h2>
+    <p>Ready to upgrade your parking system? Reach out to us today!</p>
+    <a href="mailto:info@sokhonsecurity.com" class="cta-button">Email Us</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Sokhon Security S.A.R.L All rights reserved.</p>
+</footer>
+
+
+
+{% endblock content %}

@@ -1,0 +1,118 @@
+.main-header {
+    background: #01020e11;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4f4f4;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #f4f4f4;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+.company-name {
+    font-size: 15px;
+
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #162c42;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

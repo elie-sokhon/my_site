@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Register{% endblock title %}
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/auth.css" %}/>
+{% endblock css_files %}
+{% block content %}
+<div class="auth-container">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-control">
+            {{ form.user_name.label_tag }}
+            {{ form.user_name }}
+        </div>
+        <div class="form-control">
+            {{ form.email_address.label_tag }}
+            {{ form.email_address }}
+        </div>
+        <div class="form-control">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+        </div>
+        <div class="form-control">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+        </div>
+        <button type="submit" class="auth-btn">Register</button>
+    </form>
+    <div class="auth-links">
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+  </div>
+  
+{% endblock content %}
