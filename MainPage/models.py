@@ -2,14 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db import models
 
+
 class Profile(models.Model):
-    user_name = models.CharField(max_length=100,null=True)
-    email_address = models.EmailField(null=True)
-    password1 = models.CharField(max_length=100, null=True)
-    password2 = models.CharField(max_length=100, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)  # Link to the Django User model
+    email_address = models.EmailField(null=True, blank=True)  # Optional email field for additional data
 
     def __str__(self):
-        return f"{self.user_name}"
+        return f"{self.user.username}"  # Display the username from the User model
+
     
 # Create your models here.
 class Product(models.Model):

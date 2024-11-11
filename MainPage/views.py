@@ -6,10 +6,11 @@ from django.views import View
 from .forms import CommentForm, CustomUserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth import login
-
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from .models import Profile
 
 def contact_form(request):
     if request.method == 'POST':
@@ -25,26 +26,36 @@ def contact_form(request):
         )
     return render(request, 'MainPage/email.html')
 
-def login(request):
-    form = CustomUserCreationForm()
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("starting-page")  # Redirect to the home page on successful login
+        else:
+            messages.error(request, "Invalid username or password.")
+    return render(request, 'MainPage/login.html')
 
-    return render(request, "MainPage/login.html", {
-        "form":form
-    })
 
 def logout(request):
     pass
 
-def register(request):
-    if request.method == "POST":
+
+def register_view(request):
+    if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            #login(request, user)  # Automatically log in the new user
-            return redirect("starting-page")
+            user = form.save(commit=False)# Save the user
+            user.email = form.cleaned_data.get('email')
+            user.save()
+            Profile.objects.create(user=user)  # Create a Profile linked to this user
+            login(request, user)  # Log in the user after registration
+            return redirect('starting-page')  # Redirect to home page
     else:
         form = CustomUserCreationForm()
-    return render(request, "MainPage/register.html", {"form": form})
+    return render(request, 'MainPage/register.html', {'form': form})
 
 
 class StartingPageView(TemplateView):

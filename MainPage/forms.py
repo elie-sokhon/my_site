@@ -14,14 +14,14 @@ class CommentForm(forms.ModelForm):
             "created_at": "Created at:",
         }
 
-
-class CustomUserCreationForm(forms.ModelForm):
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True, label="Email Address")
     class Meta:
-        model = Profile
-        fields = "__all__"
+        model = User
+        fields = ["username", "email", "password1", "password2"]
         labels = {
-            "user_name":"Username",
-            "email_address": "Email",
+            "username": "Username",
             "password1": "Password",
-            "password2": "Confirm your password",
+            "password2": "Confirm Password",
         }
+
