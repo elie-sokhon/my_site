@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Email Us{% endblock title %}
+{% block css_files %}
+ <link rel="stylesheet" href= {% static "MainPage/email.css" %}/>
+{% endblock css_files %}
+{% block content %}
+<body>
+
+    <div class="email-form">
+        <form method="POST" action="{% url 'email' %}">
+            {% csrf_token %}
+            <input type="text" name="subject" placeholder="Email Subject" required>
+            
+            <input type="email" name="email" placeholder="Your Email Address" required>
+           
+            <textarea name="message" placeholder="Your Message" required></textarea>
+             
+            <button class="btn btn-primary mt-2" type="submit">Send</button>
+            
+        </form>
+    </div>
+    
+    </body>
+{% endblock content %}

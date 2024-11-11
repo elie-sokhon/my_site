@@ -8,6 +8,23 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import login
 
+from django.core.mail import send_mail
+from django.conf import settings
+
+def contact_form(request):
+    if request.method == 'POST':
+        message = request.POST['message']
+        email = request.POST['email']
+        subject = request.POST['subject']  # Renamed for clarity
+        send_mail(
+            subject,  # Subject of the email
+            message,  # Message content
+            settings.EMAIL_HOST_USER,  # From email
+            [email],  # To email
+            fail_silently=False,
+        )
+    return render(request, 'MainPage/email.html')
+
 def login(request):
     form = CustomUserCreationForm()
 
